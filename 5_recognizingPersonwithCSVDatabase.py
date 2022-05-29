@@ -82,7 +82,7 @@ while True:
                         person = str(row)
                         print(name)
                 listString = str(box)
-                print(box)
+                #print(box)
                 if name in listString:
                     singleList = list(flatten(box))
                     listlen = len(singleList)
@@ -100,6 +100,10 @@ while True:
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
     if key == 27:
+        break
+    if proba*100 > 95.0:
+        print("The person is "+name)
+        print("Worked............")
         break
 
 cam.release()
